@@ -1,6 +1,6 @@
 <table>
-  <tr *ngFor="let rows of groups" ondragstart="return false;" ondrop="return false;">
-    <td *ngFor="let cell of rows.row" (mousedown)="down(cell)" (mouseover)="over(cell)" (mouseup)="up()"
-      [class.active]="cell.isChecked"></td>
+  <tr *ngFor="let rows of currentLevel; let i = index">
+    <td *ngFor="let cell of rows; let j = index" (mousedown)="down(i, j)"
+      [class.active]="cell"></td>
   </tr>
 </table>
